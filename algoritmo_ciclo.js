@@ -6,12 +6,10 @@
          bandera++;
      } if (bandera == 1){
          console.log("A");
-         bandera++;
-    
+         bandera++;  
      } if (bandera == 2){
          console.log("N");
-         bandera++;
-    
+         bandera++;    
      } if (bandera == 3){
          console.log("T");
          bandera++;
