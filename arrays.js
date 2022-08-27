@@ -1,6 +1,11 @@
+const infoEstudiantes = [];
+
 function ingresarEstudiantes(){
 
 
+function listaUsuarios(infoEstudiantes){
+    console.log(infoEstudiantes);
+}
 
 const seleccion = parseInt(prompt(
 `Selecciona una opción: 
@@ -66,7 +71,6 @@ class Usuario {
     this.notaFinal = notaFinal;
 }}
 
-let infoEstudiantes = [];
 
 
 function calcularNotaFinal(nombre, materia){
@@ -80,11 +84,12 @@ function calcularNotaFinal(nombre, materia){
         }
         }
     notaFinal = notaFinal.toFixed(2);
-    
-    infoEstudiantes.push(new Usuario(nombre, materia, notaFinal)); 
+    let nuevoEstudiante = new Usuario(nombre, materia, notaFinal);
+    infoEstudiantes.push(nuevoEstudiante); 
 
     console.log(infoEstudiantes);
 }
+
 
 
 let materia = "";
@@ -128,7 +133,7 @@ let materia = "";
         break;
         
     case 2:
-        // console.log("Gracias por usar la plataforma.");
+        listaUsuarios(infoEstudiantes);
         break;
         
     case 3:
