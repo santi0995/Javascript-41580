@@ -7,13 +7,38 @@ function listaUsuarios(infoEstudiantes){
     console.log(infoEstudiantes);
 }
 
+function verEstudiante(infoEstudiantes){
+    let texto = "";
+    for (let i = 0; i < infoEstudiantes.length; i++) {
+        texto = texto.concat(
+            `Ingrese ${i + 1} para ver el estudiante ${infoEstudiantes[i].nombre} \n`
+            );
+    }
+    const option = parseInt(prompt(texto));
+    console.log(infoEstudiantes[option - 1]);
+}
+
+function eliminarEstudiante(infoEstudiantes){
+    let texto = "";
+    for (let i = 0; i < infoEstudiantes.length; i++) {
+        texto = texto.concat(
+            `Ingrese ${i + 1} para eliminar al estudiante ${infoEstudiantes[i].nombre} \n`
+            );
+    }
+    const option = parseInt(prompt(texto));
+    infoEstudiantes.splice(option - 1, 1);
+    console.log("Informacion actualizada");
+    listaUsuarios(infoEstudiantes);
+}
+
 const seleccion = parseInt(prompt(
 `Selecciona una opción: 
 
     1. Ingresar estudiante y su información.
     2. Revisar listado de estudiantes ingresados.
-    3. Eliminar estudiante e información.
-    4. Salir.`));
+    3. Revisar información de un estudiante.
+    4. Eliminar estudiante e información.
+    5. Salir.`));
 
 
 
@@ -65,10 +90,11 @@ function menuMateria(){
 }
 
 class Usuario {
-    constructor(nombre, materia, notaFinal){
+    constructor(nombre, materia, notaFinal, id){
     this.nombre = nombre;
     this.materia = materia;
     this.notaFinal = notaFinal;
+    this.id = id;
 }}
 
 
@@ -84,7 +110,7 @@ function calcularNotaFinal(nombre, materia){
         }
         }
     notaFinal = notaFinal.toFixed(2);
-    let nuevoEstudiante = new Usuario(nombre, materia, notaFinal);
+    let nuevoEstudiante = new Usuario(nombre, materia, notaFinal, infoEstudiantes.length + 1);
     infoEstudiantes.push(nuevoEstudiante); 
 
     console.log(infoEstudiantes);
@@ -134,13 +160,20 @@ let materia = "";
         
     case 2:
         listaUsuarios(infoEstudiantes);
+        ingresarEstudiantes();
         break;
         
     case 3:
-        // console.log("Gracias por usar la plataforma.");
+        verEstudiante(infoEstudiantes);
+        ingresarEstudiantes();
         break;
         
     case 4:
+        eliminarEstudiante(infoEstudiantes);
+        ingresarEstudiantes();
+        break;
+        
+    case 5:
         console.log("Gracias por usar la plataforma.");
         break;
         
