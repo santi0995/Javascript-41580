@@ -59,11 +59,17 @@ function menuMateria(){
             }
 }
 
+class Usuario {
+    constructor(nombre, materia, notaFinal){
+    this.nombre = nombre;
+    this.materia = materia;
+    this.notaFinal = notaFinal;
+}}
 
 let infoEstudiantes = [];
 
+
 function calcularNotaFinal(nombre, materia){
-    let arreglo = [];
     let notaFinal = 0;
         for (let i = 1; i <= 3; i++) {
         let notaParcial = parseFloat(prompt(`Ingresa la nota del entregable ${i}`))
@@ -74,11 +80,10 @@ function calcularNotaFinal(nombre, materia){
         }
         }
     notaFinal = notaFinal.toFixed(2);
-    infoEstudiantes.push({nombre, materia, notaFinal});
-    arreglo = infoEstudiantes;
+    
+    infoEstudiantes.push(new Usuario(nombre, materia, notaFinal)); 
 
-
-    console.log(arreglo);
+    console.log(infoEstudiantes);
 }
 
 
@@ -98,15 +103,19 @@ let materia = "";
                 break;
         
             case 3:
-                
+                materia = "Lengua"
+                calcularNotaFinal(nombre, materia);
+                menuMateria();
                 break;
         
             case 4:
-                
+                materia = "Inglés"
+                calcularNotaFinal(nombre, materia);
+                menuMateria();
                 break;
         
             case 5:
-                
+                console.log("Gracias por usar la plataforma.");
                 break;
         
             default:
@@ -119,11 +128,11 @@ let materia = "";
         break;
         
     case 2:
-        console.log("Gracias por usar la plataforma.");
+        // console.log("Gracias por usar la plataforma.");
         break;
         
     case 3:
-        console.log("Gracias por usar la plataforma.");
+        // console.log("Gracias por usar la plataforma.");
         break;
         
     case 4:
