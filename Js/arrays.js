@@ -3,11 +3,10 @@ const infoEstudiantes = [];
 function ingresarEstudiantes(){
 
 
-function listaUsuarios(infoEstudiantes){
-    console.log(infoEstudiantes);
-}
+const listaUsuarios = (infoEstudiantes) => console.log(infoEstudiantes);
 
-function verEstudiante(infoEstudiantes){
+
+const verEstudiante = (infoEstudiantes) => {
     let texto = "";
     for (let i = 0; i < infoEstudiantes.length; i++) {
         texto = texto.concat(
@@ -18,7 +17,7 @@ function verEstudiante(infoEstudiantes){
     console.log(infoEstudiantes[option - 1]);
 }
 
-function eliminarEstudiante(infoEstudiantes){
+const eliminarEstudiante = (infoEstudiantes) => {
     let texto = "";
     for (let i = 0; i < infoEstudiantes.length; i++) {
         texto = texto.concat(
@@ -38,14 +37,15 @@ const seleccion = parseInt(prompt(
     2. Revisar listado de estudiantes ingresados.
     3. Revisar información de un estudiante.
     4. Eliminar estudiante e información.
-    5. Salir.`));
+    5. Cerrar sesión.`));
 
 
 
 
 switch(seleccion){
     case 1:
-        const nombre = prompt("Ingrese el nombre del estudiante")
+        const nombre = prompt("Ingrese el nombre del estudiante");
+        const apellido = prompt("Ingrese el apellido del estudiante");
 
         definirMateria()
 
@@ -90,8 +90,9 @@ function menuMateria(){
 }
 
 class Usuario {
-    constructor(nombre, materia, notaFinal, id){
+    constructor(nombre, apellido, materia, notaFinal, id){
     this.nombre = nombre;
+    this.apellido = apellido;
     this.materia = materia;
     this.notaFinal = notaFinal;
     this.id = id;
@@ -99,18 +100,22 @@ class Usuario {
 
 
 
-function calcularNotaFinal(nombre, materia){
+const calcularNotaFinal = (nombre, apellido, materia) => {
     let notaFinal = 0;
         for (let i = 1; i <= 3; i++) {
         let notaParcial = parseFloat(prompt(`Ingresa la nota del entregable ${i}`))
-        if (notaParcial > 0) {
+        if (notaParcial > 0 && notaParcial < 11) {
+            notaFinal += notaParcial/3;
+        } else if (notaParcial > 10) {
+            alert("Valor incorrecto");
+            notaParcial = parseFloat(prompt(`Ingresa la nota del entregable ${i}`))
             notaFinal += notaParcial/3;
         } else {
             notaParcial = 0;
         }
         }
     notaFinal = notaFinal.toFixed(2);
-    let nuevoEstudiante = new Usuario(nombre, materia, notaFinal, infoEstudiantes.length + 1);
+    let nuevoEstudiante = new Usuario(nombre, apellido, materia, notaFinal, infoEstudiantes.length + 1);
     infoEstudiantes.push(nuevoEstudiante); 
 
     console.log(infoEstudiantes);
@@ -123,25 +128,25 @@ let materia = "";
         switch (seleccionMateria) {
             case 1:
                 materia = "Matematicas"
-                calcularNotaFinal(nombre, materia);
+                calcularNotaFinal(nombre, apellido, materia,);
                 menuMateria();
                 break;
         
             case 2:
                 materia = "Fisica"
-                calcularNotaFinal(nombre, materia);
+                calcularNotaFinal(nombre, apellido, materia,);
                 menuMateria();
                 break;
         
             case 3:
                 materia = "Lengua"
-                calcularNotaFinal(nombre, materia);
+                calcularNotaFinal(nombre, apellido, materia,);
                 menuMateria();
                 break;
         
             case 4:
                 materia = "Inglés"
-                calcularNotaFinal(nombre, materia);
+                calcularNotaFinal(nombre, apellido, materia,);
                 menuMateria();
                 break;
         
@@ -183,8 +188,8 @@ let materia = "";
             break;
         };
     }
-
-ingresarEstudiantes();
+    
+    //ingresarEstudiantes();
 
 
 
