@@ -41,6 +41,24 @@ a{
     font-size: 12px;
 }
 
+.submit{
+    font-size: 1rem;
+    font-weight: 600; 
+    display: flex;
+    max-width: 100px;
+    justify-content: center;
+    margin: 50px auto;
+    border: 2px solid #2ecc71;
+    padding: 14px  40px;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background: #2ecc71;
+}
+
 a:link{
     color: #1c5982;
 }
@@ -49,7 +67,6 @@ a:visited{
 }
 
 .box input[type = "text"], .box input[type = "password"]{
-    border: 0;
     background: none;
     display: block;
     margin: 20px auto;
@@ -68,7 +85,7 @@ a:visited{
     border-color: #2ecc71; 
 }
 
-.box input[type = "submit"]{
+/* .box input[type = "submit"]{
     border: 0;
     background: none;
     display: block;
@@ -85,7 +102,7 @@ a:visited{
 
 .box input[type = "submit"]:hover{
     background: #2ecc71;
-}
+} */
 
 ::placeholder{
     color: #1c5982;

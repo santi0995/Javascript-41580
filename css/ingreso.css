@@ -6,14 +6,14 @@ body{
 }
 
 .box{
-    width: 400px;
+    width: 80vw;
+    height: 80vh;
     padding: 30px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(200,200,200, 0.5);
-    text-align: center;
 }
 
 .box h1{
@@ -21,8 +21,15 @@ body{
     text-transform: uppercase;
     font-weight: 500;
     margin: 20px 0 0 0;
+    margin-left: 50px;
 }
 
+
+p{
+    font-size: 14px;
+    color: #1c5982;
+    margin: 0 0 70px 50px;
+}
 a{
     display: block;
     text-decoration: none;
@@ -43,15 +50,15 @@ a:visited{
     color: #611b1b;
 }
 
-p{
-    font-size: 14px;
-    color: #1c5982;
-    margin: 0 0 70px;
-}
-
 ul{
+    color: #1c5982;
     list-style: none;
     padding: 0;
+}
+
+ul li{
+    margin-left: 50px;
+    font-size: 2rem;
 }
 
 .back-img{
@@ -64,13 +71,21 @@ ul{
 
 input{
     font-size: 15px;
+    width: 500px;
+    height: 1.5rem;
     font-weight: 600;
+    margin: 20px 80px;
+    background: none;
+    border: 3px solid #3498db;
+    outline: none;
+    color: #1c5982;
+    padding-left: 10px;
 }
 
 .container{
-display: flex;
-justify-content: center;
-text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .description{
@@ -81,24 +96,19 @@ text-align: center;
     color: #0d2b3f;
 }
 
+::placeholder{
+    color: rgba(64, 109, 109, .4);
+    padding-left: 10px;
+}
 
-.colorO:visited, .colorO:link{
+h2{
+    font-size: 2rem;
     color: #1c5982;
-    transition: 2s;
+    margin: 40px 80px;
 }
 
-.color:visited, .color:link{
-    color: #1c6b82;
-    transition: 2s;
+h3{
+    font-size: 1.5rem;
+    color: #611b1b;
+    margin: 10px 80px;
 }
-
-.color1:visited, .color1:link{
-    color: #079270;
-    transition: 2s;
-}
-
-.color2:visited, .color2:link{
-    color: #4306a6;
-    transition: 2s;
-}
-

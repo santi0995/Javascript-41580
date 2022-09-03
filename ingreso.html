@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma profesores</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Ingreso de estudiantes</title>
+    <link rel="stylesheet" href="./css/ingreso.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
@@ -16,13 +16,18 @@
         <p class="description">Institución educativa - Consejeria de educación, cultura y deporte <br> <span> 2022 </span></p>
     </div>
     <form class="box" action="index.html" method="post">
-        <h1>Iniciar sesion</h1>
-        <input type="text" name="" placeholder="Usuario">
-        <input type="password" name="" placeholder="Contraseña">
-        <a href="#"><p>Has olvidado tu contraseña?</p></a> 
-        <!-- <input type="submit" name="" value="Login"> -->
-        <a class="submit" href="/login.html">Login</a>
+        <h1>Plataforma estudiantil</h1>
+        <p>Sistema de ingreso de estudiantes y sus respectivas notas</p>
+        <ul id="formlist">
+            <li>Ingresar estudiante y su información:</li>
+            <h2 class="name"></h2>
+            <h2 class="lastName"></h2>
+            <h3 class="materia"></h3>
+            <div id="first"></div>
+            <div id="second"></div>
+            <div id="third"></div>
+        </ul>     
     </form>
-    <script src=""></script>
+    <script src="./Js/dom.js"></script>
 </body>
 </html>
