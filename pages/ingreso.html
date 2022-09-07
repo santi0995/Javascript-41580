@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de estudiantes</title>
+    <link rel="stylesheet" href="../css/ingreso.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="back-img" src="../img/f9bbdeb62248e2fc4418a6935e64cf4c_XL.jpeg" alt="">
+    <div class="container">
+        <p class="description">Institución educativa - Consejeria de educación, cultura y deporte <br> <span> 2022 </span></p>
+    </div>
+    <section class="box">
+        <h1>Plataforma estudiantil</h1>
+        <p>Sistema de ingreso de estudiantes y sus respectivas notas</p>
+        <div id="formlist">
+            <h2>Ingresar estudiante y su información:</h2>
+            <form action="">
+                <label for="">Nombre:
+                    <input id="nombre" type="text"/>
+                    <button id="arrowButton" type="button">X</button>
+                </label>
+                <label for="">Apellido:
+                    <input id="apellido" type="text"/>
+                    <button id="arrowButton1" type="button">X</button>
+                </label>
+            </form>
+            <h2>Selecciona una materia:</h2>
+            <select onchange="seleccionarMateria()" id="materias">
+                <option  value="0">Seleccione una opción</option>
+                <option  value="matematicas">Matemáticas</option>
+                <option  value="ingles">Inglés</option>
+                <option  value="fisica">Física</option>
+                <option  value="lengua">Lengua</option>
+            </select>
+            <form  id="formMateria" action="">
+                <label class="notas">Nota de primera entrega:<input id="nota1" class="inputNotas" type="number"></input></label> 
+                <label class="notas">Nota de segunda entrega:<input id="nota2" class="inputNotas" type="number"></input></label> 
+                <label class="notas">Nota de tercera entrega:<input id="nota3" class="inputNotas" type="number"></input></label>
+            </form>
+            <div class="buttonContainer">
+                <button onclick="calcularPromedio()">Calcular <br> promedio</button>
+                <button>Menu principal</button>
+            </div>
+            <span id="spanPromedio"></span>
+        </div>     
+    </section>
+    <script src="../Js/dom.js"></script>
+</body>
+</html>

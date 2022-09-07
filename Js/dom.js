@@ -1,33 +1,61 @@
-let nombre = prompt("Ingrese el nombre del estudiante")
-let apellido = prompt("Ingrese el apellido del estudiante")
-let materia = prompt("Ingrese la materia")
+let nombre = document.getElementById("nombre");
+let arrowb = document.getElementById("arrowButton");
+let arrowb1 = document.getElementById("arrowButton1");
+let apellido = document.getElementById("apellido");
 
-let name = document.getElementsByClassName('name');
-name[0].innerHTML = `Nombre: ${nombre}`;
+nombre.addEventListener('change', blockInputName);
+apellido.addEventListener('change', blockInputLast);
 
-let last = document.getElementsByClassName("lastName");
-last[0].innerHTML = `Apellido: ${apellido}`;
 
-let note = document.getElementsByClassName("materia");
-note[0].innerHTML = `Materia: ${materia}`;
+function blockInputName (){
+    nombre.disabled = true;
+    nombre.className = "inputFocus";
+}
 
-let list = document.querySelector("#first");
-list.innerHTML = `<input 
-class="corte1"
-type="text"
-placeholder="Nota de primera entrega"
-/>`;
+function blockInputLast (){
+    apellido.disabled = true;
+    apellido.className = "inputFocus";
+}
 
-let list2 = document.querySelector("#second");
-list2.innerHTML = `<input 
-class="corte2"
-type="text"
-placeholder="Nota de segunda entrega"
-/>`;
+arrowb.onclick = arrowB;
 
-let list3 = document.querySelector("#third");
-list3.innerHTML = `<input 
-class="corte3"
-type="text"
-placeholder="Nota de tercera entrega"
-/>`;
+function arrowB(){
+    nombre.disabled = false;
+}
+
+arrowb1.onclick = arrowB1;
+
+function arrowB1(){
+    apellido.disabled = false;
+}
+
+let valores = document.getElementById('formMateria')
+
+function seleccionarMateria(){
+    valores.className = "notas1"
+}
+
+
+let nota1 = document.querySelector("#nota1");
+let nota2 = document.querySelector("#nota2");
+let nota3 = document.querySelector("#nota3");
+
+
+nota1.addEventListener("input", mostrarPromedio)
+nota2.addEventListener("input", mostrarPromedio)
+nota3.addEventListener("input", mostrarPromedio)
+
+let promedio = document.getElementById('spanPromedio');
+let contador = 0;
+
+function mostrarPromedio(){
+    let primer = parseInt(nota1.value);
+    let segundo = parseInt(nota2.value);
+    let tercer = parseInt(nota3.value);
+    contador = (primer + segundo + tercer)/3;
+}
+
+
+function calcularPromedio(){
+    promedio.innerText = `El promedio es: ${contador.toFixed(2)}`
+}
