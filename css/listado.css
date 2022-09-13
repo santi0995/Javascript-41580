@@ -6,7 +6,8 @@ body{
 }
 
 .box{
-    width: 400px;
+    width: 1000px;
+    height: 500px;
     padding: 30px;
     position: absolute;
     top: 50%;
@@ -41,12 +42,38 @@ p{
     display: flex;
     justify-content: center;
     text-align: center;
-    }
+}
     
-    .description{
+.description{
         font-size: 13px;
         position: absolute;
         margin: 20px auto;
         bottom: 0;
         color: #0d2b3f;
-    }
+}
+
+button{
+        position: absolute;
+        top: 50%;
+        left: 46%;
+        background: none;
+        font-size: 1rem;
+        font-weight: 600; 
+        display: flex;
+        border: 2px solid #2ecc71;
+        padding: 14px  40px;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+        margin: 100px auto;
+}
+    
+button:hover{
+        background-color: #2ecc71;
+}
+
+#lista{
+    color: #1c5982;
+    display: flex;
+    justify-content: center;
+}

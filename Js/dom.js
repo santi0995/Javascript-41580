@@ -79,29 +79,35 @@ function isNumberKey(evt) {
 
 
 let formulario = document.querySelector('#form1')
+let materia = document.querySelector('#materias')
+
+console.dir(materia);
 
 function generarEstudiante(){
 
     let valueUser = formulario.usuario.value;
     let valueLastName = formulario.apellido.value; 
-    let valueNota = contador
+    let valueNota = contador;
+    let materiaElegida = materia.value 
 
     const objetoEstudiante = {
         nombre: valueUser,
         apellido: valueLastName,
-        notaFinal: valueNota,
+        notaFinal: valueNota.toFixed(2),
+        materia: materiaElegida,
     };
 
-    const token = generateTokenEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal)
+    const token = generateTokenEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia)
     localStorage.setItem("Estudiante", token)
     promedio.innerText = `Estudiante guardado con exito`
 }
 
-function generateTokenEstudiante(nombre, apellido, notaFinal ) {
+function generateTokenEstudiante(Nombre, Apellido, Nota_Final, Materia ) {
     const user = {
-    nombre,
-    apellido,
-    notaFinal,    
+    Nombre,
+    Apellido,
+    Nota_Final,
+    Materia    
     };
     return JSON.stringify(user);
 };
