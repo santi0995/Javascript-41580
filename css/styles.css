@@ -1,123 +1,178 @@
-body{
-    height: 100vh;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Fjalla One', sans-serif;
 }
 
-.box{
-    width: 400px;
-    padding: 30px;
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000000;
+}
+
+img{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(200,200,200, 0.5);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+}
+
+.container-form{
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+}
+
+.welcome-back{
+    display: flex;
+    align-items: center;
     text-align: center;
 }
 
-.box h1{
-    color: #1c5982;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 50px;
+.message{
+    padding: 1rem;
 }
 
-.back-img{
-    height: 100vh;
-    width: 100vw;
-    filter: blur(6px);
-    opacity: .9;
-    z-index: -1000;
+.message h2{
+    font-size: 2.3rem;
+    padding: 1rem 0;
 }
 
-input{
-    font-size: 15px;
-    font-weight: 600;
+p{
+    font-size: 1.2rem;
+}
+
+.message button{
+    padding: 1rem;
+    font-weight: 400;
+    background-color: #4a4aee;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #fff;
+}
+
+.message button:hover{
+    background-color: #6464f8;
+}
+
+.formulario{
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    background-color: rgba(51, 51, 51, 0.6);
+    text-align: center;
+    color: #fff;
+}
+
+.create-account{
+    padding: 2.7rem 0;
+    font-size: 2rem;
+}
+
+.cuenta-gratis{
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.formulario input{
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom:  #2ecc71 thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: #fff;
 }
 
 a{
     text-decoration: none;
-    font-size: 12px;
+    color: #2ecc71;
 }
 
-.submit{
-    font-size: 1rem;
-    font-weight: 600; 
-    display: flex;
-    max-width: 100px;
-    justify-content: center;
-    margin: 50px auto;
-    border: 2px solid #2ecc71;
-    padding: 14px  40px;
-    border-radius: 24px;
-    transition: 0.25s;
+.formulario input[type="button"] {
+    width: 60%;
+    margin: auto;
+    border: solid 2px #2ecc71;
+    padding: .8rem;
+    border-radius: 2rem;
+    background-color: none;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: 1.2rem;
     cursor: pointer;
-}
-
-.submit:hover{
-    background: #2ecc71;
-}
-
-a:link{
-    color: #1c5982;
-}
-a:visited{
-    color: #1c5982;
-}
-
-.box input[type = "text"], .box input[type = "password"]{
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 3px solid #3498db;
-    padding: 14px  10px;
-    width: 200px;
-    outline: none;
     color: #fff;
-    border-radius: 24px;
-    transition: 0.25s;
 }
 
-.box input[type = "text"]:focus, .box input[type = "password"]:focus{
-    width: 280px;
-    border-color: #2ecc71; 
-}
+.formulario input[type="button"]:hover{
+    background-color: #2ecc71;
+} 
 
-/* .box input[type = "submit"]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 50px auto;
-    text-align: center;
-    border: 2px solid #2ecc71;
-    padding: 14px  40px;
-    outline: none;
-    color: #1c5982;
-    border-radius: 24px;
-    transition: 0.25s;
-    cursor: pointer;
-}
-
-.box input[type = "submit"]:hover{
-    background: #2ecc71;
-} */
-
-::placeholder{
-    color: #1c5982;
-}
-
-.container{
-display: flex;
-justify-content: center;
-text-align: center;
-}
-
-.description{
-    font-size: 13px;
+.sign-in{
     position: absolute;
-    margin: 20px auto;
-    bottom: 0;
-    color: #0d2b3f;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active{
+    opacity: 0;
+    visibility: hidden;
+}
+
+footer{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.descrip {
+    width: 70%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    bottom: 10px;
+}
+
+#linkLogin{
+    width: 60%;
+    text-decoration: none;
+    justify-content: center;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: solid 2px #2ecc71;
+    border-radius: 2rem;
+    color: #fff;
+}
+
+.showContent{
+    display: flex;
+}
+
+.hideContent{
+    display: none;
 }

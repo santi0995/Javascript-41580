@@ -7,22 +7,53 @@
     <title>Plataforma profesores</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <img class="back-img" src="./img/f9bbdeb62248e2fc4418a6935e64cf4c_XL.jpeg" alt="">
-    <div class="container">
-        <p class="description">Institución educativa - Consejeria de educación, cultura y deporte <br> <span> 2022 </span></p>
+    <img src="./img/f9bbdeb62248e2fc4418a6935e64cf4c_XL.jpeg" alt="">
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido a la plataforma estudiantil</h2>
+                <p>Si ya tienes una cuenta por favor inicia sesión aquí</p>
+                <button class="sign-up-btn">Iniciar sesion</button>
+            </div>
+        </div>
+        <form class="formulario" id="form1">
+            <h2 class="create-account">Crear una cuenta</h2>
+            <p class="cuenta-gratis">Crear una cuenta gratis</p>
+            <input type="text" placeholder="Nombre" name="usuario">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Contraseña" name="password">
+            <input type="button" value="Registrarse" onclick="login(event)">
+            <p class="cuenta-gratis" id="registrado"></p>
+        </form>
     </div>
-    <form class="box" action="index.html" method="post">
-        <h1>Iniciar sesion</h1>
-        <input type="text" name="" placeholder="Usuario">
-        <input type="password" name="" placeholder="Contraseña">
-        <a href="#"><p>Has olvidado tu contraseña?</p></a> 
-        <!-- <input type="submit" name="" value="Login"> -->
-        <a class="submit" href="./pages/login.html">Login</a>
-    </form>
-    <script src=""></script>
+    <div class="container-form sign-in">
+        <form class="formulario" id="form2">
+            <h2 class="create-account">Iniciar sesión</h2>
+            <p class="cuenta-gratis">¿Aún no tienes cuenta?</p>
+            <input type="text" placeholder="Nombre" name="usuario">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Contraseña" name="password">
+            <div id="inputValidar" >
+                <input type="button" value="Validar" onclick="authUser(event)">
+            </div>
+            <a id="linkLogin" class="hideContent" href="./pages/login.html">Iniciar Sesión</a>
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Si aún no tienes una cuenta por favor registrate aquí</p>
+                <button class="sign-in-btn">Registrarse</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="descrip">Institución educativa - Consejeria de educación, cultura y deporte <br> <span> 2022 </span>
+        </p> 
+        </footer>
+    <script src="./Js/script.js"></script>
 </body>
 </html>
