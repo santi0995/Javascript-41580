@@ -3,23 +3,20 @@ let apellido = document.getElementById("apellido");
 let arrowb = document.getElementById("arrowButton");
 let arrowb1 = document.getElementById("arrowButton1");
 
-
-
 nombre.addEventListener('change', blockInputName);
 apellido.addEventListener('change', blockInputLast);
 
 
-function blockInputName (){
-    nombre.disabled = true;
-    nombre.className = "inputFocus";
+function blockInputName() {
+nombre.disabled = true; nombre.className = "inputFocus";
 }
 
-function blockInputLast (){
-    apellido.disabled = true;
-    apellido.className = "inputFocus";
+function blockInputLast() {
+apellido.disabled = true; apellido.className = "inputFocus";
 }
 
 arrowb.onclick = arrowB;
+
 
 function arrowB(){
     nombre.disabled = false;
@@ -33,9 +30,7 @@ function arrowB1(){
 
 let valores = document.getElementById('formMateria')
 
-function seleccionarMateria(){
-    valores.className = "notas1"
-}
+seleccionarMateria = () => valores.className = "notas1"
 
 let nota1 = document.querySelector("#nota1");
 let nota2 = document.querySelector("#nota2");
@@ -58,15 +53,11 @@ function mostrarPromedio(){
     
 }
 
-function calcularPromedio(){
-    if(nota1.value && nota2.value && nota3.value){
-    promedio.innerText = `El promedio es: ${contador.toFixed(2)}`
-    }else{
-        alert("Debes rellenar todos los campos")
-    }
+calcularPromedio = () => {
+    nota1.value && nota2.value && nota3.value ? promedio.innerText = `El promedio es: ${contador.toFixed(2)}` : alert("Debes rellenar todos los campos")
 }
 
-function isNumberKey(evt) {
+isNumberKey = (evt) => {
     let charCode = (evt.which) ? evt.which : evt.keyCode;
     if (charCode != 46 && charCode > 31 &&
         (charCode < 48 || charCode > 57)){
@@ -78,29 +69,34 @@ function isNumberKey(evt) {
 
 
 
-let formulario = document.querySelector('#form1')
 let materia = document.querySelector('#materias')
+let formulario = document.querySelector('#form1')
 
-console.dir(materia);
 
-function generarEstudiante(){
+class Estudiante{
+    constructor(nombre, apellido, notaFinal, materia){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.notaFinal = notaFinal;
+        this.materia= materia;
+    }
+}
 
-    let valueUser = formulario.usuario.value;
-    let valueLastName = formulario.apellido.value; 
-    let valueNota = contador;
-    let materiaElegida = materia.value 
+let list = [];
 
-    const objetoEstudiante = {
-        nombre: valueUser,
-        apellido: valueLastName,
-        notaFinal: valueNota.toFixed(2),
-        materia: materiaElegida,
-    };
-
+generarEstudiante = () => {
+    const objetoEstudiante = new Estudiante(
+        formulario.usuario.value, 
+        formulario.apellido.value,
+        contador.toFixed(2),
+        materia.value,
+    );  
+    // list.push(objetoEstudiante)
+    promedio.innerText = `Estudiante guardado con exito`
     const token = generateTokenEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia)
     localStorage.setItem("Estudiante", token)
-    promedio.innerText = `Estudiante guardado con exito`
-}
+    // imprimirLista();
+};
 
 function generateTokenEstudiante(Nombre, Apellido, Nota_Final, Materia ) {
     const user = {
@@ -111,3 +107,20 @@ function generateTokenEstudiante(Nombre, Apellido, Nota_Final, Materia ) {
     };
     return JSON.stringify(user);
 };
+
+
+// imprimirLista = () => {
+//     list.forEach((est)=> {
+//         let listHTML = document.createElement("div");
+//         listHTML.innerHTML = `<h2>${est.nombre}</h2>
+//          <h2>${est.apellido}</h2>
+//          <h2>${est.notaFinal.toFixed(2)}</h2>
+//          <h2>${est.materia}</h2>`
+//         promedio.appendChild(listHTML)
+//     })
+// }
+
+
+
+
+

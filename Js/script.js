@@ -16,12 +16,12 @@ let formulario = document.querySelector('#form1')
 let formLogin = document.querySelector('#form2')
 let promedio = document.getElementById('registrado');
 
-console.log(promedio);
-
 function login(e){
     e.preventDefault();
 
-    if(formulario.usuario.value && formulario.password.value && formulario.email.value){
+    const verif = formulario.usuario.value && formulario.password.value && formulario.email.value
+
+    if(verif){
 
 
     let valueUser = formulario.usuario.value;
@@ -44,7 +44,7 @@ function login(e){
     }
 }
 
-function generateToken(usuario, password, email) {
+generateToken = (usuario, password, email) => {
     const user = {
     usuario,
     password,
@@ -53,7 +53,7 @@ function generateToken(usuario, password, email) {
     return JSON.stringify(user);
 };
 
-function authUser(e){
+authUser = (e) =>{
     e.preventDefault();
 
     let valueName = formLogin.usuario.value;
@@ -69,7 +69,7 @@ function authUser(e){
     const userLog = generateUser(userLogin.usuario, userLogin.password, userLogin.email)
     localStorage.setItem("user", userLog)
 
-    if (localStorage.getItem("token") == userLog) {
+    if (localStorage.getItem("token") === userLog) {
         let link = document.querySelector('#linkLogin');
         link.className = "showContent"
         let inputVal = document.querySelector('#inputValidar');
@@ -79,7 +79,7 @@ function authUser(e){
     }
 };
 
-function generateUser(usuario, password, email) {
+generateUser = (usuario, password, email) => {
     const userLogin = {
     usuario,
     password,
