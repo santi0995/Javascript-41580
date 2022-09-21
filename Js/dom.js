@@ -54,7 +54,13 @@ function mostrarPromedio(){
 }
 
 calcularPromedio = () => {
-    nota1.value && nota2.value && nota3.value ? promedio.innerText = `El promedio es: ${contador.toFixed(2)}` : alert("Debes rellenar todos los campos")
+    nota1.value && nota2.value && nota3.value ? promedio.innerText = `El promedio es: ${contador.toFixed(2)}` 
+    : 
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Debes ingresar todas las notas'
+      })
 }
 
 isNumberKey = (evt) => {
@@ -91,19 +97,28 @@ generarEstudiante = () => {
         contador.toFixed(2),
         materia.value,
     );  
-    // list.push(objetoEstudiante)
-    promedio.innerText = `Estudiante guardado con exito`
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Estudiante guardado con exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
     const token = generateTokenEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia)
     localStorage.setItem("Estudiante", token)
+    list.push(objetoEstudiante)
     // imprimirLista();
+    console.log(list);
+    //agregar validacion para guardar que necesite campos
 };
+
 
 function generateTokenEstudiante(Nombre, Apellido, Nota_Final, Materia ) {
     const user = {
-    Nombre,
-    Apellido,
-    Nota_Final,
-    Materia    
+        Nombre,
+        Apellido,
+        Nota_Final,
+        Materia    
     };
     return JSON.stringify(user);
 };

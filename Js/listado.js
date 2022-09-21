@@ -1,8 +1,10 @@
 
 const estudiante = localStorage.getItem("Estudiante")
 
-console.log(estudiante);
 
 let lista = document.querySelector("#lista")
+
+
+console.log(estudiante);
 
 lista.innerHTML = estudiante.slice(1,-1)

@@ -36,11 +36,21 @@ function login(e){
     };
     
     const token = generateToken(objetoUsuario.usuario, objetoUsuario.password, objetoUsuario.email)
-    localStorage.setItem("token", token)
-    promedio.innerText = "Te has registrado con exito"
+    localStorage.setItem("token", token);
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Te has registrado con exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
     
     }else{
-        alert("Debes rellenar todos los campos")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes rellenar todos los campos!',
+          })
     }
 }
 
@@ -75,7 +85,11 @@ authUser = (e) =>{
         let inputVal = document.querySelector('#inputValidar');
         inputVal.className = "hideContent"
     } else {
-        alert("Usuario o contraseña incorrectos")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Usuario o contrasea incorrectos!',
+          })
     }
 };
 
