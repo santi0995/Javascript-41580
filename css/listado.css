@@ -52,6 +52,21 @@ p{
         color: #0d2b3f;
 }
 
+#listado{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.keys{
+    margin: 10px;
+    font-size: 1.1rem;
+}
+
+.nombre{
+    font-size: 1.4rem;
+}
+
 button{
         position: absolute;
         top: 50%;
@@ -65,7 +80,7 @@ button{
         border-radius: 24px;
         transition: 0.25s;
         cursor: pointer;
-        margin: 100px auto;
+        margin: 120px auto;
 }
     
 button:hover{

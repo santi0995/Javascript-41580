@@ -106,10 +106,6 @@ generarEstudiante = () => {
       })
     const token = generateTokenEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia)
     localStorage.setItem("Estudiante", token)
-    list.push(objetoEstudiante)
-    // imprimirLista();
-    console.log(list);
-    //agregar validacion para guardar que necesite campos
 };
 
 
