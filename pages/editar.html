@@ -19,7 +19,7 @@
     <div class="box">
             <h1>Plataforma estudiantil</h1>
             <p>Sistema de ingreso de estudiantes y sus respectivas notas</p>
-              <table class="table">
+            <table class="table">
                 <thead>
                   <tr class="head">
                     <th scope="col">#</th>
@@ -31,10 +31,21 @@
                 </thead>
                 <tbody id="est1">
                 </tbody>
-              </table>
-              <button  onclick="location.href='./login.html'" >Ir al menu</button>
+                <form 
+               class="form" id="taskForm">
+               <label for="">Editar campos:</label>
+                    <input id="nameInput" type="text" placeholder="Nombre">
+                    <input id="lastNameInput" type="text" placeholder="Apellido">
+                    <input id="materiaInput" type="text" placeholder="Materia">
+                    <input id="notaInput" type="number" placeholder="Nota final">
+                </form>
+            </table>
+              <form id="formSubmit">
+                  <button class="nonActive" id="btn-task-form" > Actualizar </button>
+                  <button  onclick="location.href='./login.html'" >Ir al menu</button>
+              </form>
     </div>
     <script type="module" src="../Js/firebase.js"></script>
-    <script type="module" src="../Js/listado.js"></script>
+    <script type="module" src="../Js/editar.js"></script>
 </body>
 </html>

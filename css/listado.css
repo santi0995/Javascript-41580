@@ -7,8 +7,8 @@ body{
 
 .box{
     width: 1000px;
-    height: 500px;
-    padding: 30px;
+    height: 70%;
+    padding: 3rem 5rem 5rem 5rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,13 +21,13 @@ body{
     color: #1c5982;
     text-transform: uppercase;
     font-weight: 500;
-    margin: 20px 0 0 0;
+    margin: 2px 0 0 0;
 }
 
 p{
     font-size: 14px;
     color: #1c5982;
-    margin: 0 0 70px;
+    margin: 0 0 2rem 0;
 }
 
 .back-img{
@@ -52,25 +52,7 @@ p{
         color: #0d2b3f;
 }
 
-#listado{
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-.keys{
-    margin: 10px;
-    font-size: 1.1rem;
-}
-
-.nombre{
-    font-size: 1.4rem;
-}
-
 button{
-        position: absolute;
-        top: 50%;
-        left: 46%;
         background: none;
         font-size: 1rem;
         font-weight: 600; 
@@ -80,15 +62,69 @@ button{
         border-radius: 24px;
         transition: 0.25s;
         cursor: pointer;
-        margin: 120px auto;
+        margin: 0 auto;
 }
     
 button:hover{
         background-color: #2ecc71;
 }
 
-#lista{
-    color: #1c5982;
-    display: flex;
-    justify-content: center;
+
+.btn-edit{
+    font-size: .8rem;
+    padding: .5rem;
 }
+
+.btn-delete{
+    padding: .5rem;
+}
+
+
+.table{
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 2rem;
+}
+
+.head th{
+    padding: 2rem 0 3rem 0;
+    color: #1c5982;
+}
+
+.id{
+    color: #1c5982;
+}
+
+.list th, td{
+    padding: 0 0 1.5rem 0;
+}
+
+
+#formSubmit{
+    display: flex;
+}
+
+.nonActive{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+label{
+   font-size: 1.2rem;
+}
+
+input{
+    font-size: 1rem;
+    font-family: 'Fjalla One', sans-serif;
+    
+    margin: 2rem 2rem 0 1.5rem;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    }

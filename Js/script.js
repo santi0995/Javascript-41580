@@ -37,14 +37,12 @@ function login(e){
     
     const token = generateToken(objetoUsuario.usuario, objetoUsuario.password, objetoUsuario.email)
     localStorage.setItem("token", token);
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Te has registrado con exito',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    
+    Swal.fire(
+        'Bien hecho!',
+        'Te has registrado con exito!',
+        'success',
+      ) 
+      formulario.reset();
     }else{
         Swal.fire({
             icon: 'error',

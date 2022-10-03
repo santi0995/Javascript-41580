@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingreso de estudiantes</title>
-    <link rel="stylesheet" href="../css/ingreso.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ingreso de estudiantes</title>
+        <link rel="stylesheet" href="../css/ingreso.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    </head>
 <body>
     <img class="back-img" src="../img/f9bbdeb62248e2fc4418a6935e64cf4c_XL.jpeg" alt="">
     <div class="container">
@@ -29,6 +29,7 @@
                     <input id="apellido" type="text" name="apellido"/>
                     <button id="arrowButton1" type="button">X</button>
                 </label>
+                <button id="guardar" >Guardar<br> Estudiante</button>
             </form>
             <h2>Selecciona una materia:</h2>
             <select onchange="seleccionarMateria()" id="materias">
@@ -45,13 +46,14 @@
             </form>
             <div class="buttonContainer">
                 <button onclick="calcularPromedio()">Calcular <br> promedio</button>
-                <button onclick="generarEstudiante()">Guardar<br> Estudiante</button>
                 <button  onclick="location.href='./login.html'" >Ir al menu</button>
             </div>
             <span id="spanPromedio"></span>
-        </div>     
+        </div>  
     </section>
+    <script type="module" src="../Js/firebase.js"></script>
+    <script src="../Js/ingreso.js"></script>
+    <script type="module" src="../Js/app.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../Js/dom.js"></script>
 </body>
 </html> 
