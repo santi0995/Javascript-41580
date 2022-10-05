@@ -18,7 +18,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
   const db = getFirestore();
 
   export const saveEstudiante = (nombre, apellido, notaFinal, materia, id) =>{
-        addDoc(collection(db, 'estudiantes'), {Nombre: nombre, Apellido: apellido, NotaFinal: notaFinal, Materia: materia, id: id})
+        addDoc(collection(db, 'estudiantes'), {Nombre: nombre, Apellido: apellido, NotaFinal: notaFinal, Materia: materia})
   }
 
   export const getEstudiante = () => getDocs(collection(db, 'estudiantes'))
