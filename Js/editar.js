@@ -1,10 +1,9 @@
 import { getEst, onGetEstudiantes, updateEstudiante } from "./firebase.js";
 
 let tbody = document.querySelector("#est1");
-let taskForm = document.querySelector('#taskForm')
+let editForm = document.querySelector('#editForm')
 let formSubmit = document.querySelector('#formSubmit')
 let id = "";
-let contador = 0
 
 window.addEventListener("DOMContentLoaded", async () => {
   onGetEstudiantes((querySnapshot) => {
@@ -15,7 +14,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       html += `
       <tr class="list">
-      <th class="id"scope="row">${contador+=1}</th>
       <td>${estud.Nombre}</>
       <td>${estud.Apellido}</>
       <td>${estud.Materia}</>
@@ -27,8 +25,9 @@ window.addEventListener("DOMContentLoaded", async () => {
       `;
         
     });
-
+    
     tbody.innerHTML = html;
+    
 
     const btnsEdit = tbody.querySelectorAll(".btn-edit");
     
@@ -38,13 +37,13 @@ window.addEventListener("DOMContentLoaded", async () => {
             try {
               const doc = await getEst(e.target.dataset.id);
               const est = doc.data();
-              taskForm["nameInput"].value = est.Nombre;
-              taskForm["lastNameInput"].value = est.Apellido;
-              taskForm["materiaInput"].value = est.Materia;
-              taskForm["notaInput"].value = est.NotaFinal;
+              editForm["nameInput"].value = est.Nombre;
+              editForm["lastNameInput"].value = est.Apellido;
+              editForm["materiaInput"].value = est.Materia;
+              editForm["notaInput"].value = est.NotaFinal;
     
               id = doc.id;
-              formSubmit["btn-task-form"].className = "active";
+              formSubmit["btn-edit-form"].className = "active";
             } catch (error) {
               console.log(error);
             }
@@ -56,10 +55,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 formSubmit.addEventListener("submit", async (e) => {
     e.preventDefault();
   
-    const name = taskForm["nameInput"];
-    const lastName = taskForm["lastNameInput"];
-    const materia = taskForm["materiaInput"];
-    const notaFinal = taskForm["notaInput"];
+    const name = editForm["nameInput"];
+    const lastName = editForm["lastNameInput"];
+    const materia = editForm["materiaInput"];
+    const notaFinal = editForm["notaInput"];
 
     try {
           updateEstudiante(id, {
@@ -68,12 +67,12 @@ formSubmit.addEventListener("submit", async (e) => {
               NotaFinal: notaFinal.value,
               Materia: materia.value,
           }) 
+      editForm.reset();
+      formSubmit["btn-edit-form"].className = "nonActive";
 
-      taskForm.reset();
     } catch (error) {
         console.log(error);
       }
-    
   });
 
 

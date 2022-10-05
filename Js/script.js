@@ -1,8 +1,9 @@
-
 const btnSignIn = document.querySelector('.sign-in-btn');
 const btnSignUp = document.querySelector('.sign-up-btn');
 const signUp = document.querySelector('.sign-up');
 const signIn = document.querySelector('.sign-in');
+let formulario = document.querySelector('#form1')
+let formLogin = document.querySelector('#form2')
 
 
 document.addEventListener('click', e => {
@@ -11,10 +12,6 @@ document.addEventListener('click', e => {
         signUp.classList.toggle('active');
     }
 });
-
-let formulario = document.querySelector('#form1')
-let formLogin = document.querySelector('#form2')
-let promedio = document.getElementById('registrado');
 
 function login(e){
     e.preventDefault();

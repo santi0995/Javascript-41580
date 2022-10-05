@@ -1,5 +1,4 @@
-body{
-    height: 100vh;
+*{
     margin: 0;
     padding: 0;
     font-family: 'Fjalla One', sans-serif;
@@ -25,7 +24,7 @@ body{
 }
 
 p{
-    font-size: 14px;
+    font-size: .8rem;
     color: #1c5982;
     margin: 0 0 2rem 0;
 }
@@ -36,6 +35,7 @@ p{
     filter: blur(6px);
     opacity: .7;
     z-index: -1000;
+    object-fit: cover;
 }
 
 .container{
@@ -51,6 +51,21 @@ p{
         bottom: 0;
         color: #0d2b3f;
 }
+
+fieldset{
+    width: 500px;
+    border: none;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.formInputs{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
 
 button{
         background: none;
@@ -99,9 +114,9 @@ button:hover{
     padding: 0 0 1.5rem 0;
 }
 
-
-#formSubmit{
+.container{
     display: flex;
+    align-items: center;
 }
 
 .nonActive{
@@ -118,9 +133,12 @@ label{
 
 input{
     font-size: 1rem;
-    font-family: 'Fjalla One', sans-serif;
-    
+    font-family: 'Fjalla One', sans-serif;   
     margin: 2rem 2rem 0 1.5rem;
+}
+
+.irMenu{
+    margin: 1rem;
 }
 
 
@@ -128,3 +146,161 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     }
+
+
+/* media queries */
+
+@media (max-width:1200px){
+
+
+    .box{
+        max-width: 800px;
+    }
+    
+} 
+
+@media (max-width:1024px){
+    
+    .box{
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 1rem 3rem 2rem;
+    }
+
+    .box h1{
+        font-size: 2rem;
+        margin: 1rem 0 0 0;
+    }
+
+    .table{
+        font-size: 1rem;
+        margin: .5rem;
+    }
+
+    .head th{
+        padding: 1rem 0 1rem 0;
+    }
+
+    button{
+        font-size: .8rem;
+        padding: 10px 20px;
+    }
+
+}
+
+@media (max-width:760px){
+    
+    .box{
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 1rem 3rem 2rem;
+    }
+
+    .box h1{
+        font-size: 1.5rem;
+        margin: 1rem 0 0 0;
+    }
+
+    .table{
+        font-size: .8rem;
+        margin: .5rem;
+    }
+
+    .head th{
+        padding: 1rem 0 1rem 0;
+    }
+
+    button{
+        font-size: .8rem;
+        padding: 8px 15px;
+    }
+
+    fieldset{
+        width: 10%;
+    }
+
+    .formInputs{
+        width: 440px;
+        margin: -1rem;    
+    }
+
+    .btn-edit{
+        font-size: .5rem;
+        padding: .4rem;
+    }
+
+
+}
+
+@media (max-width:480px){
+
+    .box{
+        max-width: 360px;
+    }
+
+    button{
+        font-size: .6rem;
+        padding: 6px 12px;
+    }
+
+    .description{
+        font-size: .5rem;
+    }
+
+    input{
+        font-size: .8rem;
+        margin: 1rem 1rem 0 .5rem;
+    }
+
+    fieldset{
+        width: 10%;
+    }
+
+    .formInputs{
+        width: 440px;
+        margin: -1rem;    
+    }
+}
+
+@media (max-width:380px){
+
+    .box{
+        max-width: 200px;
+    }
+
+    .box h1{
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: .5rem;
+    }
+
+    .table{
+        font-size: .6rem;
+    }
+
+    button{
+        font-size: .6rem;
+        padding: 6px 12px;
+    }
+
+    fieldset{
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .formInputs{
+        width: 100%;
+        margin: 0;
+    }
+
+    input{
+        font-size: .6rem;  
+    }
+
+} 

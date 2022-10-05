@@ -13,7 +13,9 @@
 <body>
     <img class="back-img" src="../img/f9bbdeb62248e2fc4418a6935e64cf4c_XL.jpeg" alt="">
     <div class="container">
-        <p class="description">Institución educativa - Consejeria de educación, cultura y deporte <br> <span> 2022 </span></p>
+        <p class="description">Institución educativa - Consejeria de educación, cultura y deporte <br> 
+            <span> 2022 </span>
+        </p>
     </div>
     <section class="box">
         <h1>Plataforma estudiantil</h1>
@@ -34,15 +36,24 @@
             <h2>Selecciona una materia:</h2>
             <select onchange="seleccionarMateria()" id="materias">
                 <option  value="0">Seleccione una opción</option>
-                <option  value="matematicas">Matemáticas</option>
-                <option  value="ingles">Inglés</option>
-                <option  value="fisica">Física</option>
-                <option  value="lengua">Lengua</option>
+                <option  value="Matemáticas">Matemáticas</option>
+                <option  value="Inglés">Inglés</option>
+                <option  value="Física">Física</option>
+                <option  value="Lengua">Lengua</option>
             </select>
             <form  id="formMateria" action="">
-                <label class="notas">Nota de primera entrega:<input id="nota1" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label> 
-                <label class="notas">Nota de segunda entrega:<input id="nota2" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label> 
-                <label class="notas">Nota de tercera entrega:<input id="nota3" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label>
+                <label class="notas">Nota de primera entrega:
+                    <input id="nota1" class="inputNotas" type="number" onkeypress="return soloNumeros(event)">
+                </input>
+            </label> 
+                <label class="notas">Nota de segunda entrega:
+                    <input id="nota2" class="inputNotas" type="number" onkeypress="return soloNumeros(event)">
+                </input>
+            </label> 
+                <label class="notas">Nota de tercera entrega:
+                    <input id="nota3" class="inputNotas" type="number" onkeypress="return soloNumeros(event)">
+                </input>
+            </label>
             </form>
             <div class="buttonContainer">
                 <button onclick="calcularPromedio()">Calcular <br> promedio</button>

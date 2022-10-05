@@ -1,7 +1,4 @@
-body{
-    height: 100vh;
-    margin: 0;
-    padding: 0;
+*{
     font-family: 'Fjalla One', sans-serif;
 }
 
@@ -60,6 +57,7 @@ ul{
     filter: blur(6px);
     opacity: .7;
     z-index: -1000;
+    object-fit: cover;
 }
 
 input{
@@ -80,4 +78,45 @@ text-align: center;
     bottom: 0;
     color: #0d2b3f;
 }
+
+
+    /* media queries */
+
+    
+@media (max-width:480px){
+    
+    .box{
+        width: 300px;
+    }
+
+    .box h1{
+        font-size: 1.5rem;
+    }
+
+    p{
+        font-size: .6rem;
+    }
+       
+}
+    
+@media (max-width:380px){
+    
+    .box{
+        width: 250px;
+    }
+
+    .box h1{
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: .4rem;
+    }
+
+    a{
+        font-size: 1rem;
+        margin: 20px;
+    }
+    
+} 
 

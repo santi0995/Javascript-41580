@@ -73,7 +73,7 @@ label{
 
 input{
     font-size: 1.3rem;
-    width: 400px;
+    width: 250px;
     height: 1.5rem;
     margin: 10px 10px 10px 20px;
     background: none;
@@ -88,13 +88,13 @@ input{
     justify-content: center;
     text-align: center;
 }
-
+    
 .description{
-    font-size: 1.1rem;
-    position: absolute;
-    margin: 20px auto;
-    bottom: 50px;
-    color: #0d2b3f;
+        font-size: 13px;
+        position: absolute;
+        margin: 20px auto;
+        bottom: 0;
+        color: #0d2b3f;
 }
 
 
@@ -119,11 +119,10 @@ button:hover{
 #guardar{
     position: absolute;
     bottom: 80px;
-    right: 25.5%;
+    right: 400px;
 }
 
 .inputFocus{
-    width: 400px;
     height: 2.5rem;
     margin: 10px 10px 10px 20px;
     background: none;
@@ -182,3 +181,85 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     }
+
+
+
+/* media queries */
+
+    @media (max-width:760px){
+
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .buttonContainer button, #guardar{
+            font-size: .8rem;
+            padding: 1rem;
+        }
+
+        label{
+            margin: 0;
+        }
+
+        #formMateria input{
+            width: 20px;
+        }
+
+    
+    }
+    
+    @media (max-width:480px){
+
+        .box h1{
+            font-size: 1.5rem;
+        }
+
+        .box p{
+            font-size: .9rem;
+        }
+
+        .box h2{
+            font-size: 1rem;
+        }
+
+        label{
+            font-size: 1rem;
+        }
+
+        input{
+            width: 40%;
+        }
+
+        #form1{
+            margin: 1rem 3rem;
+        }
+
+        #formMateria {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .notas{
+            font-size: 1rem;
+        }
+
+        .buttonContainer button, #guardar{
+            font-size: .5rem;
+        }
+        #guardar{
+            right: 250px;
+        }
+
+        #spanPromedio{
+            font-size: 1rem;
+        }
+
+    }
+    
+    @media (max-width:380px){
+
+    } 

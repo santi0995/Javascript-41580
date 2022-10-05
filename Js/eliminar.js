@@ -1,7 +1,6 @@
 import { deleteEstudiante, onGetEstudiantes } from "./firebase.js";
 
 let tbody = document.querySelector("#est1");
-let contador = 0
 
 window.addEventListener("DOMContentLoaded", async () => {
   onGetEstudiantes((querySnapshot) => {
@@ -12,7 +11,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
       html += `
         <tr class="list">
-        <th class="id"scope="row">${contador+=1}</th>
         <td>${estud.Nombre}</>
         <td>${estud.Apellido}</>
         <td>${estud.Materia}</>

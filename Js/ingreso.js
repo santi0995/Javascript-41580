@@ -1,22 +1,20 @@
 let valores = document.getElementById('formMateria')
-
-function seleccionarMateria() {
-    valores.className = "notas1"
-}
-
 let nota1 = document.querySelector("#nota1");
 let nota2 = document.querySelector("#nota2");
 let nota3 = document.querySelector("#nota3");
 let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
+let promedio = document.getElementById('spanPromedio');
+let contador = 0;
+
 
 nota1.addEventListener("input", mostrarPromedio)
 nota2.addEventListener("input", mostrarPromedio)
 nota3.addEventListener("input", mostrarPromedio)
 
-
-let promedio = document.getElementById('spanPromedio');
-let contador = 0;
+function seleccionarMateria() {
+    valores.className = "notas1"
+}
 
 function mostrarPromedio(){
 

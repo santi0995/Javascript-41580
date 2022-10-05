@@ -4,33 +4,6 @@ let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
 let blockName = document.getElementById("blockButton");
 let blockName1 = document.getElementById("blockButton1");
-
-
-nombre.addEventListener('change', blockInputName);
-apellido.addEventListener('change', blockInputLast);
-
-
-function blockInputName() {
-nombre.disabled = true; nombre.className = "inputFocus";
-}
-
-function blockInputLast() {
-apellido.disabled = true; apellido.className = "inputFocus";
-}
-
-blockName.onclick = blockInput;
-
-
-function blockInput(){
-    nombre.disabled = false;
-}
-
-blockName1.onclick = blockInput1;
-
-function blockInput1(){
-    apellido.disabled = false;
-}
-
 let formulario = document.querySelector('#form1')
 let materia = document.querySelector('#materias')
 let valores = document.getElementById('formMateria')
@@ -39,6 +12,39 @@ let nota1 = document.querySelector("#nota1");
 let nota2 = document.querySelector("#nota2");
 let nota3 = document.querySelector("#nota3");
 let contador = 0; 
+
+
+
+nombre.addEventListener('change', blockInputName);
+apellido.addEventListener('change', blockInputLast);
+
+
+function blockInputName() {
+    nombre.disabled = true; 
+    nombre.className = "inputFocus";
+}
+
+function blockInputLast() {
+    apellido.disabled = true;
+    apellido.className = "inputFocus";
+}
+
+blockName.onclick = unblockInput;
+
+
+function unblockInput(){
+    nombre.disabled = false;
+    nombre.className = "";
+}
+
+blockName1.onclick = unblockInput1;
+
+function unblockInput1(){
+    apellido.disabled = false;
+    apellido.className = "";
+}
+
+
 
 
 class Estudiante{
@@ -70,7 +76,8 @@ function generarEstudiante(){
         materia.value,
         ); 
         if(formulario.usuario.value && formulario.apellido.value && contador.toFixed(2) && materia.value){ 
-        saveEstudiante(objetoEstudiante.nombre,objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia);
+        saveEstudiante(objetoEstudiante.nombre, objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia);
+
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -78,6 +85,7 @@ function generarEstudiante(){
         showConfirmButton: false,
         timer: 1500
     })
+
 }else{
     Swal.fire({
         icon: 'error',
@@ -85,6 +93,7 @@ function generarEstudiante(){
         text: 'Debes rellenar todos los campos'
       })
 } 
+
 formulario.reset();
 valores.reset();
 valores.className = "";
@@ -92,6 +101,6 @@ materia.value = "0"
 nombre.className = "";
 apellido.className = "";
 promedio.innerText = "";
-blockInput();
-blockInput1();
+unblockInput();
+unblockInput1();
 };
