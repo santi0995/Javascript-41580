@@ -17,17 +17,17 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebas
 
   const db = getFirestore();
 
-  export const saveTask = (nombre, apellido, notaFinal, materia) =>{
+  export const saveEstudiante = (nombre, apellido, notaFinal, materia) =>{
         addDoc(collection(db, 'estudiantes'), {Nombre: nombre, Apellido: apellido, NotaFinal: notaFinal, Materia: materia})
   }
 
   export const getEstudiante = () => getDocs(collection(db, 'estudiantes'))
   
-  export const onGetTasks = (callback) => onSnapshot(collection(db, 'estudiantes'), callback)
+  export const onGetEstudiantes = (callback) => onSnapshot(collection(db, 'estudiantes'), callback)
 
-  export const deleteTask = (id) => deleteDoc(doc(db, 'estudiantes', id))
+  export const deleteEstudiante = (id) => deleteDoc(doc(db, 'estudiantes', id))
 
   export const getEst = (id) => getDoc(doc(db, 'estudiantes', id))
 
-  export const updateEst = (id, newFields) => 
+  export const updateEstudiante = (id, newFields) => 
   updateDoc(doc(db, 'estudiantes', id), newFields);

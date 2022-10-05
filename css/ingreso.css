@@ -133,7 +133,7 @@ button:hover{
     padding-left: 10px;
 }
 
-#arrowButton, #arrowButton1{
+#blockButton, #blockButton1{
     display: block;
     font-size: 1rem;
     padding: 2px 5px;
@@ -143,7 +143,7 @@ button:hover{
     margin-left: 10px;
 }
 
-#arrowButton:hover, #arrowButton1:hover{
+#blockButton:hover, #blockButton1:hover{
     background-color: #cc312e;
 }
 

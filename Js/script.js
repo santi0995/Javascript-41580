@@ -19,14 +19,14 @@ let promedio = document.getElementById('registrado');
 function login(e){
     e.preventDefault();
 
-    const verif = formulario.usuario.value && formulario.password.value && formulario.email.value
+    const verificarUser = formulario.usuario.value && formulario.password.value && formulario.email.value
 
-    if(verif){
+    if(verificarUser){
+        
+            let valueUser = formulario.usuario.value;
+            let valuePass = formulario.password.value;
+            let valueEmail = formulario.email.value;
 
-
-    let valueUser = formulario.usuario.value;
-    let valuePass = formulario.password.value;
-    let valueEmail = formulario.email.value;
     
     
     const objetoUsuario = {
@@ -35,7 +35,7 @@ function login(e){
         email: valueEmail
     };
     
-    const token = generateToken(objetoUsuario.usuario, objetoUsuario.password, objetoUsuario.email)
+    const token = generarToken(objetoUsuario.usuario, objetoUsuario.password, objetoUsuario.email)
     localStorage.setItem("token", token);
     Swal.fire(
         'Bien hecho!',
@@ -52,7 +52,7 @@ function login(e){
     }
 }
 
-generateToken = (usuario, password, email) => {
+generarToken = (usuario, password, email) => {
     const user = {
     usuario,
     password,
@@ -61,7 +61,7 @@ generateToken = (usuario, password, email) => {
     return JSON.stringify(user);
 };
 
-authUser = (e) =>{
+autorizarUsuario = (e) =>{
     e.preventDefault();
 
     let valueName = formLogin.usuario.value;
@@ -74,7 +74,7 @@ authUser = (e) =>{
         email: valueEmail
     };
 
-    const userLog = generateUser(userLogin.usuario, userLogin.password, userLogin.email)
+    const userLog = generarUsuario(userLogin.usuario, userLogin.password, userLogin.email)
     localStorage.setItem("user", userLog)
 
     if (localStorage.getItem("token") === userLog) {
@@ -91,7 +91,7 @@ authUser = (e) =>{
     }
 };
 
-generateUser = (usuario, password, email) => {
+generarUsuario = (usuario, password, email) => {
     const userLogin = {
     usuario,
     password,

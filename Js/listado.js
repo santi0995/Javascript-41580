@@ -1,4 +1,4 @@
-import { onGetTasks } from './firebase.js'
+import { onGetEstudiantes } from './firebase.js'
 
 let tbody = document.querySelector('#est1')
 let contador = 0
@@ -6,7 +6,7 @@ let contador = 0
 
 window.addEventListener('DOMContentLoaded', async() => {
 
-    onGetTasks((querySnapshot) => {
+    onGetEstudiantes((querySnapshot) => {
         let html = "";
     
     querySnapshot.forEach((est) => {

@@ -23,11 +23,11 @@
             <form id="form1">
                 <label for="">Nombre:
                     <input id="nombre" type="text" name="usuario"/>
-                    <button id="arrowButton" type="button">X</button>
+                    <button id="blockButton" type="button">X</button>
                 </label>
                 <label for="">Apellidos:
                     <input id="apellido" type="text" name="apellido"/>
-                    <button id="arrowButton1" type="button">X</button>
+                    <button id="blockButton1" type="button">X</button>
                 </label>
                 <button id="guardar" >Guardar<br> Estudiante</button>
             </form>
@@ -40,9 +40,9 @@
                 <option  value="lengua">Lengua</option>
             </select>
             <form  id="formMateria" action="">
-                <label class="notas">Nota de primera entrega:<input id="nota1" class="inputNotas" type="number" onkeypress="return isNumberKey(event)"></input></label> 
-                <label class="notas">Nota de segunda entrega:<input id="nota2" class="inputNotas" type="number" onkeypress="return isNumberKey(event)"></input></label> 
-                <label class="notas">Nota de tercera entrega:<input id="nota3" class="inputNotas" type="number" onkeypress="return isNumberKey(event)"></input></label>
+                <label class="notas">Nota de primera entrega:<input id="nota1" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label> 
+                <label class="notas">Nota de segunda entrega:<input id="nota2" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label> 
+                <label class="notas">Nota de tercera entrega:<input id="nota3" class="inputNotas" type="number" onkeypress="return soloNumeros(event)"></input></label>
             </form>
             <div class="buttonContainer">
                 <button onclick="calcularPromedio()">Calcular <br> promedio</button>

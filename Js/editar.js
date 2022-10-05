@@ -1,4 +1,4 @@
-import { getEst, onGetTasks, updateEst } from "./firebase.js";
+import { getEst, onGetEstudiantes, updateEstudiante } from "./firebase.js";
 
 let tbody = document.querySelector("#est1");
 let taskForm = document.querySelector('#taskForm')
@@ -7,7 +7,7 @@ let id = "";
 let contador = 0
 
 window.addEventListener("DOMContentLoaded", async () => {
-  onGetTasks((querySnapshot) => {
+  onGetEstudiantes((querySnapshot) => {
     let html = "";
 
     querySnapshot.forEach((est) => {
@@ -62,7 +62,7 @@ formSubmit.addEventListener("submit", async (e) => {
     const notaFinal = taskForm["notaInput"];
 
     try {
-          updateEst(id, {
+          updateEstudiante(id, {
               Nombre: name.value, 
               Apellido: lastName.value, 
               NotaFinal: notaFinal.value,

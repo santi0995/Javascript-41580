@@ -1,9 +1,9 @@
-import {saveTask} from './firebase.js'
+import {saveEstudiante} from './firebase.js'
 
 let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
-let arrowb = document.getElementById("arrowButton");
-let arrowb1 = document.getElementById("arrowButton1");
+let blockName = document.getElementById("blockButton");
+let blockName1 = document.getElementById("blockButton1");
 
 
 nombre.addEventListener('change', blockInputName);
@@ -18,16 +18,16 @@ function blockInputLast() {
 apellido.disabled = true; apellido.className = "inputFocus";
 }
 
-arrowb.onclick = arrowB;
+blockName.onclick = blockInput;
 
 
-function arrowB(){
+function blockInput(){
     nombre.disabled = false;
 }
 
-arrowb1.onclick = arrowB1;
+blockName1.onclick = blockInput1;
 
-function arrowB1(){
+function blockInput1(){
     apellido.disabled = false;
 }
 
@@ -70,7 +70,7 @@ function generarEstudiante(){
         materia.value,
         ); 
         if(formulario.usuario.value && formulario.apellido.value && contador.toFixed(2) && materia.value){ 
-        saveTask(objetoEstudiante.nombre,objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia);
+        saveEstudiante(objetoEstudiante.nombre,objetoEstudiante.apellido, objetoEstudiante.notaFinal, objetoEstudiante.materia);
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -92,6 +92,6 @@ materia.value = "0"
 nombre.className = "";
 apellido.className = "";
 promedio.innerText = "";
-arrowB();
-arrowB1();
+blockInput();
+blockInput1();
 };

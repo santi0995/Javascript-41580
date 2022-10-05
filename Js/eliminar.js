@@ -1,10 +1,10 @@
-import { deleteTask, onGetTasks } from "./firebase.js";
+import { deleteEstudiante, onGetEstudiantes } from "./firebase.js";
 
 let tbody = document.querySelector("#est1");
 let contador = 0
 
 window.addEventListener("DOMContentLoaded", async () => {
-  onGetTasks((querySnapshot) => {
+  onGetEstudiantes((querySnapshot) => {
     let html = "";
 
     querySnapshot.forEach((est) => {
@@ -30,7 +30,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", ({target: {dataset}}) => {
-        deleteTask(dataset.id)
+        deleteEstudiante(dataset.id)
       });
     });
   });
